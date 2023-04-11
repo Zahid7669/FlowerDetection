@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Image Predictor{% endblock %}
+
+{% block content %}
+    <h1>Image Predictor</h1>
+
+    <form>
+        <div class="form-group">
+            <label for="image">Select an image to predict:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Predict</button>
+        </div>
+    </form>
+
+    <div class="prediction">
+        {% if prediction %}
+            <p>{{ prediction }}</p>
+        {% endif %}
+    </div>
+{% endblock %}
